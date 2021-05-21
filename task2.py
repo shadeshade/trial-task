@@ -28,6 +28,7 @@ def get_html_str(url):
 
 def save_html_file(filename, html_str):
     folder_path = CUR_DIR / "files"
+    Path(folder_path).mkdir(parents=True, exist_ok=True)
     with open(f"{folder_path / filename}.html", "w") as f:
         f.write(html_str)
 
